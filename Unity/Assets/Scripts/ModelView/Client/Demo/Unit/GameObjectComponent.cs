@@ -19,6 +19,11 @@ namespace ET.Client
                 this.Transform = value.transform;
             }
         }
+        
+        /// <summary>
+        /// 该Gameobject 所对应的资源名 方便销毁时, 自动卸载资源
+        /// </summary>
+        public string AssetLocationName { get; set; }
 
         public Transform Transform { get; private set; }
     }

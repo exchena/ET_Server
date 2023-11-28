@@ -93,7 +93,7 @@ namespace ET.Client
             }
 
             assetRef.UseCount++;
-            await assetRef.AssetHandle;
+            await assetRef.AssetHandle.Task;
 
             return assetRef.AssetHandle.GetAssetObject<T>();
         }
@@ -108,7 +108,7 @@ namespace ET.Client
             }
 
             assetRef.UseCount++;
-            await assetRef.AssetHandle;
+            await assetRef.AssetHandle.Task;
 
             return assetRef.AssetHandle.AssetObject;
         }
@@ -127,7 +127,7 @@ namespace ET.Client
                 self.HandleProgresses.Add(handle, progressCallback);
             }
 
-            await handle;
+            await handle.Task;
 
             return handle.SceneObject;
         }
@@ -138,7 +138,7 @@ namespace ET.Client
             {
                 if (!handle.IsDone)
                 {
-                    await handle;
+                    await handle.Task;
                 }
 
                 if (handle.IsMainScene())
@@ -148,7 +148,7 @@ namespace ET.Client
 
                 await SceneManager.UnloadSceneAsync(handle.SceneObject);
 
-                await handle.UnloadAsync();
+                await handle.UnloadAsync().Task;
 
                 self.SceneOperationHandles.Remove(location);
             }
@@ -170,7 +170,7 @@ namespace ET.Client
             }
 
             assetRef.UseCount++;
-            await assetRef.AssetHandle;
+            await assetRef.AssetHandle.Task;
 
             return assetRef.AssetHandle.GetAssetObject<TextAsset>().bytes;
         }
@@ -205,7 +205,7 @@ namespace ET.Client
             }
 
             assetRef.UseCount++;
-            await assetRef.AssetHandle;
+            await assetRef.AssetHandle.Task;
 
             return assetRef.AssetHandle.GetAssetObject<TextAsset>().text;
         }

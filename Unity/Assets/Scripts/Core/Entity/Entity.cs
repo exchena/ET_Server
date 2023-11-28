@@ -546,6 +546,24 @@ namespace ET
         {
             this.Components.Add(this.GetLongHashCode(component.GetType()), component);
         }
+        
+        public K AddOrGetComponent<K>(bool isFromPool = false) where K : Entity, IAwake, new()
+        {
+            // 如果有IGetComponent接口，则触发GetComponentSystem
+            if (this is IGetComponentSys)
+            {
+                EntitySystemSingleton.Instance.GetComponentSys(this, typeof(K));
+            }
+            
+            Entity component = this.GetComponent<K>();
+            if (this.components != null)
+            {
+                return component as K;
+            }
+
+            component = this.AddComponent<K>();
+            return component as K;
+        }
 
         private void RemoveFromComponents(Entity component)
         {

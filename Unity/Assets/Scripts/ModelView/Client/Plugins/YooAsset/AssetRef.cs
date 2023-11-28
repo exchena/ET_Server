@@ -43,7 +43,7 @@ namespace ET.Client
         {
             if (this._handle == null) return;
 
-            await this._handle;
+            await this._handle.Task;
             this.AssetLocation = this._handle.AssetObject.name;
         }
 #else

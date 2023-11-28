@@ -25,11 +25,11 @@ namespace ET.Client
                 }
                 else
                 {
-                    if (this.url.StartsWith("http"))
-                    {
-                        tex = await BestHttpComponent.Instance.LoadTexture2D(imgUrl);
-                    }
-                    else
+                    // if (this.url.StartsWith("http"))
+                    // {
+                    //     tex = await BestHttpComponent.Instance.LoadTexture2D(imgUrl);
+                    // }
+                    // else
                     {
                         tex = ResComponent.Instance.LoadAsset<Texture2D>(this.url);
                     }
