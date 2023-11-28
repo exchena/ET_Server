@@ -201,15 +201,5 @@ namespace ET
         {
             return Invoke<A, T>(0, args);
         }
-        
-        public HashSet<Type> GetTypes(Type systemAttributeType)
-        {
-            if (!this.allEvents.ContainsKey(systemAttributeType))
-            {
-                return new HashSet<Type>();
-            }
-
-            return this.allEvents[systemAttributeType];
-        }
     }
 }

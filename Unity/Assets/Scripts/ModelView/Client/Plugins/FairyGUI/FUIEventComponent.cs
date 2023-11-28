@@ -14,6 +14,7 @@ namespace ET.Client
     [ComponentOf(typeof(Scene))]
     public class FUIEventComponent : Entity, IAwake, IDestroy
     {
+        [StaticField]
         public static FUIEventComponent Instance { get; set; }
         public CDComponent FUICD => this.AddOrGetComponent<CDComponent>();
         

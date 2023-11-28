@@ -23,5 +23,7 @@ namespace ET.Client
         public GComponent PopUpGRoot{ get; set; }
         public GComponent FixedGRoot{ get; set; }
         public GComponent OtherGRoot{ get; set; }
+        
+        public GlobalConfig GlobalConfig { get; set; }
     }
 }

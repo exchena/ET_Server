@@ -18,6 +18,12 @@ namespace ET.Client
 
         }
         
+        [EntitySystem]
+        private static void Awake(this GameObjectComponent self, string location)
+        {
+            self.LoadPrefabAsync(location).Coroutine();
+        }
+        
         /// <summary>
         /// 加载预制资源
         /// </summary>

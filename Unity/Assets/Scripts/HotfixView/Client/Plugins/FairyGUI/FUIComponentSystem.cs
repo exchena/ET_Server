@@ -423,7 +423,7 @@ namespace ET.Client
                 string strClass = $"ET.Client.{pkgName}Binder";
 
                 //通strClass获得type
-                Type type = EventSystem.Instance.GetType(strClass);
+                Type type = CodeTypes.Instance.GetType(strClass);
                 if (type == null)
                 {
                     Log.Error("FUI 反射获取class失败! Class:" + strClass);

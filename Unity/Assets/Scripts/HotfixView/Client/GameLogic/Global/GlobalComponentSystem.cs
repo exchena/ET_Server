@@ -14,6 +14,7 @@ namespace ET.Client
             self.Global = GameObject.Find("/Global").transform;
             self.Unit = GameObject.Find("/Global/Unit").transform;
             self.CameraRoot = GameObject.Find("/Global/CameraRoot").transform;
+            self.GlobalConfig = Resources.Load<GlobalConfig>("GlobalConfig");
 
             self.GRoot = GRoot.inst;
 
