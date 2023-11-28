@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 1001,
+    "ServerAdress": "127.0.0.1:30001",
+    "CDNAddress": "http://127.0.0.1/"
+  },
+  {
+    "Id": 1002,
+    "ServerAdress": "101.33.252.161:30001",
+    "CDNAddress": "https://101.33.252.161/res/"
+  }
+]

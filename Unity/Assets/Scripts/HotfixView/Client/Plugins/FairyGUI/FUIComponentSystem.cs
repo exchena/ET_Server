@@ -489,9 +489,9 @@ namespace ET.Client
         /// <param name="systemId"></param>
         public static void ClosePanelBySystemId(this FUIComponent self, int systemId)
         {
-            // var conf = category_SystemUnlock.Instance.Get(systemId);
-            // PanelId panelId = EnumHelper.FromString<PanelId>(conf.PanelName);
-            // self.ClosePanel(panelId);
+            var conf = category_SystemUnlock.Instance.Get(systemId);
+            PanelId panelId = EnumHelper.FromString<PanelId>(conf.PanelName);
+            self.ClosePanel(panelId);
         }
 
         /// <summary>

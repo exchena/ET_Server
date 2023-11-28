@@ -1,0 +1,37 @@
+[
+  {
+    "_Id": 100,
+    "Type": 1,
+    "ConfId": 1,
+    "duration": 0,
+    "stackCount": 0
+  },
+  {
+    "_Id": 101,
+    "Type": 2,
+    "ConfId": 0,
+    "duration": 0,
+    "stackCount": 0
+  },
+  {
+    "_Id": 102,
+    "Type": 3,
+    "ConfId": 0,
+    "duration": 0,
+    "stackCount": 0
+  },
+  {
+    "_Id": 103,
+    "Type": 4,
+    "ConfId": 0,
+    "duration": 0,
+    "stackCount": 0
+  },
+  {
+    "_Id": 104,
+    "Type": 5,
+    "ConfId": 0,
+    "duration": 0,
+    "stackCount": 0
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "Id": 1001,
+    "Name": 102,
+    "Group": 8903,
+    "Scene": "Map1",
+    "Desc": 1003,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 1,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    },
+    "ScenePicName": "map001"
+  },
+  {
+    "Id": 1002,
+    "Name": 103,
+    "Group": 8903,
+    "Scene": "Map1",
+    "Desc": 1004,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 1,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    },
+    "ScenePicName": "map002"
+  },
+  {
+    "Id": 1003,
+    "Name": 104,
+    "Group": 8903,
+    "Scene": "Map1",
+    "Desc": 1005,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 5,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    },
+    "ScenePicName": "map003"
+  },
+  {
+    "Id": 1004,
+    "Name": 105,
+    "Group": 8903,
+    "Scene": "Map1",
+    "Desc": 1006,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 10,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    },
+    "ScenePicName": "map004"
+  },
+  {
+    "Id": 1005,
+    "Name": 106,
+    "Group": 8903,
+    "Scene": "Map1",
+    "Desc": 1007,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 15,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    },
+    "ScenePicName": "map005"
+  },
+  {
+    "Id": 1006,
+    "Name": 107,
+    "Group": 8903,
+    "Scene": "Map1",
+    "Desc": 1008,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 30,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    },
+    "ScenePicName": "map006"
+  },
+  {
+    "Id": 1007,
+    "Name": 100,
+    "Group": 8901,
+    "Scene": "Map1",
+    "Desc": 1001,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 1,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    },
+    "ScenePicName": "map001"
+  },
+  {
+    "Id": 1008,
+    "Name": 101,
+    "Group": 8902,
+    "Scene": "Map2",
+    "Desc": 1002,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 1,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    },
+    "ScenePicName": "map001"
+  }
+]

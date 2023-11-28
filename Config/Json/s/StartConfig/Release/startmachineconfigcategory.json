@@ -1,0 +1,9 @@
+[
+  {
+    "Id": 1,
+    "InnerIP": "127.0.0.1",
+    "OuterListenIP": "0.0.0.0",
+    "OuterIP": "101.33.252.161",
+    "WatcherPort": "10000"
+  }
+]

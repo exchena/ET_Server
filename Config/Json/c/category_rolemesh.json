@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 1001,
+    "PrefabName": "Man_1",
+    "FaceIcon": "HeadPic_0",
+    "skinName": "TopBody",
+    "ignoreObjs": []
+  },
+  {
+    "Id": 1002,
+    "PrefabName": "Man_2",
+    "FaceIcon": "HeadPic_0",
+    "skinName": "TopBody",
+    "ignoreObjs": []
+  },
+  {
+    "Id": 11001,
+    "PrefabName": "Man_1_UI",
+    "FaceIcon": "HeadPic_0",
+    "skinName": "TopBody",
+    "ignoreObjs": []
+  },
+  {
+    "Id": 11002,
+    "PrefabName": "Man_2_UI",
+    "FaceIcon": "HeadPic_0",
+    "skinName": "TopBody",
+    "ignoreObjs": []
+  },
+  {
+    "Id": 2001,
+    "PrefabName": "Woman_1",
+    "FaceIcon": "HeadPic_0",
+    "skinName": "TopBody",
+    "ignoreObjs": []
+  },
+  {
+    "Id": 2002,
+    "PrefabName": "Woman_2",
+    "FaceIcon": "HeadPic_0",
+    "skinName": "TopBody",
+    "ignoreObjs": []
+  },
+  {
+    "Id": 12001,
+    "PrefabName": "Woman_1_UI",
+    "FaceIcon": "HeadPic_0",
+    "skinName": "TopBody",
+    "ignoreObjs": []
+  },
+  {
+    "Id": 12002,
+    "PrefabName": "Woman_2_UI",
+    "FaceIcon": "HeadPic_0",
+    "skinName": "TopBody",
+    "ignoreObjs": []
+  }
+]

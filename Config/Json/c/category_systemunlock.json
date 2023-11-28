@@ -1,0 +1,146 @@
+[
+  {
+    "Id": 1000,
+    "UnlockLevel": 1,
+    "Name": 200,
+    "PanelName": "LobbyPanel"
+  },
+  {
+    "Id": 1010,
+    "UnlockLevel": 1,
+    "Name": 201,
+    "PanelName": "SettingPanel"
+  },
+  {
+    "Id": 1020,
+    "UnlockLevel": 1,
+    "Name": 202,
+    "PanelName": ""
+  },
+  {
+    "Id": 1021,
+    "UnlockLevel": 1,
+    "Name": 203,
+    "PanelName": "MailPanel"
+  },
+  {
+    "Id": 1022,
+    "UnlockLevel": 1,
+    "Name": 204,
+    "PanelName": "NoticePanel"
+  },
+  {
+    "Id": 1030,
+    "UnlockLevel": 1,
+    "Name": 205,
+    "PanelName": "ShowRolePanel"
+  },
+  {
+    "Id": 1040,
+    "UnlockLevel": 1,
+    "Name": 206,
+    "PanelName": ""
+  },
+  {
+    "Id": 1041,
+    "UnlockLevel": 1,
+    "Name": 207,
+    "PanelName": ""
+  },
+  {
+    "Id": 1050,
+    "UnlockLevel": 1,
+    "Name": 208,
+    "PanelName": "StagePanel"
+  },
+  {
+    "Id": 1060,
+    "UnlockLevel": 1,
+    "Name": 209,
+    "PanelName": "MissionPanel"
+  },
+  {
+    "Id": 1061,
+    "UnlockLevel": 1,
+    "Name": 210,
+    "PanelName": ""
+  },
+  {
+    "Id": 1062,
+    "UnlockLevel": 1,
+    "Name": 211,
+    "PanelName": ""
+  },
+  {
+    "Id": 1063,
+    "UnlockLevel": 1,
+    "Name": 212,
+    "PanelName": ""
+  },
+  {
+    "Id": 1070,
+    "UnlockLevel": 1,
+    "Name": 213,
+    "PanelName": "RankPanel"
+  },
+  {
+    "Id": 1080,
+    "UnlockLevel": 1,
+    "Name": 214,
+    "PanelName": "TradePanel"
+  },
+  {
+    "Id": 1090,
+    "UnlockLevel": 1,
+    "Name": 215,
+    "PanelName": "EquipPanel"
+  },
+  {
+    "Id": 1100,
+    "UnlockLevel": 1,
+    "Name": 218,
+    "PanelName": "ActivityPanel"
+  },
+  {
+    "Id": 1101,
+    "UnlockLevel": 1,
+    "Name": 219,
+    "PanelName": ""
+  },
+  {
+    "Id": 1102,
+    "UnlockLevel": 1,
+    "Name": 220,
+    "PanelName": ""
+  },
+  {
+    "Id": 1103,
+    "UnlockLevel": 1,
+    "Name": 221,
+    "PanelName": ""
+  },
+  {
+    "Id": 1110,
+    "UnlockLevel": 1,
+    "Name": 222,
+    "PanelName": "ShopPanel"
+  },
+  {
+    "Id": 1130,
+    "UnlockLevel": 1,
+    "Name": 224,
+    "PanelName": ""
+  },
+  {
+    "Id": 1140,
+    "UnlockLevel": 1,
+    "Name": 225,
+    "PanelName": ""
+  },
+  {
+    "Id": 1150,
+    "UnlockLevel": 1,
+    "Name": 226,
+    "PanelName": "BagPanel"
+  }
+]

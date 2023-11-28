@@ -472,9 +472,9 @@ namespace ET.Client
         /// </summary>
         public static void ShowPanelBySystemId(int systemId, ShowPanelData data = null)
         {
-            // var conf = category_SystemUnlock.Instance.Get(systemId);
-            // PanelId panelId = EnumHelper.FromString<PanelId>(conf.PanelName);
-            // FUIComponent.Instance.ShowPanel(panelId, data);
+            var conf = category_SystemUnlock.Instance.Get(systemId);
+            PanelId panelId = EnumHelper.FromString<PanelId>(conf.PanelName);
+            FUIComponent.Instance.ShowPanel(panelId, data);
         }
 
         /// <summary>
@@ -482,17 +482,17 @@ namespace ET.Client
         /// </summary>
         public static void Turn2PanelBySystemId(int systemId, Entity showData = null, PanelId prePanelId = PanelId.Invalid)
         {
-            // var conf = category_SystemUnlock.Instance.Get(systemId);
-            // PanelId panelId = EnumHelper.FromString<PanelId>(conf.PanelName);
-            // FUIComponent fuiComponent = FUIComponent.Instance;
-            //
-            // fuiComponent.ClosePanelByType();
-            // fuiComponent.ClosePanelByType(UIPanelType.SecondPanel, panelId);
-            //
-            // var paneldata = ObjectPool.Instance.Fetch<ShowPanelData>();
-            // paneldata.ContextData = showData;
-            //
-            // fuiComponent.ShowPanelAsync(panelId, paneldata, prePanelId).Coroutine();
+            var conf = category_SystemUnlock.Instance.Get(systemId);
+            PanelId panelId = EnumHelper.FromString<PanelId>(conf.PanelName);
+            FUIComponent fuiComponent = FUIComponent.Instance;
+            
+            fuiComponent.ClosePanelByType();
+            fuiComponent.ClosePanelByType(UIPanelType.SecondPanel, panelId);
+            
+            var paneldata = ObjectPool.Instance.Fetch<ShowPanelData>();
+            paneldata.ContextData = showData;
+            
+            fuiComponent.ShowPanelAsync(panelId, paneldata, prePanelId).Coroutine();
         }
 
         /// <summary>

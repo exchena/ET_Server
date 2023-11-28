@@ -166,6 +166,15 @@ namespace ET
             if (GUILayout.Button("ExcelExporter"))
             {
                 ToolsEditor.ExcelExporter();
+                
+                const string clientProtoDir = "../Unity/Assets/Bundles/Config";
+                if (Directory.Exists(clientProtoDir))
+                {
+                    Directory.Delete(clientProtoDir, true);
+                }
+                FileHelper.CopyDirectory("../Config/Excel/c", clientProtoDir);
+
+                AssetDatabase.Refresh();
                 return;
             }
 

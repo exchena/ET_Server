@@ -1,0 +1,153 @@
+[
+  {
+    "Id": 100101,
+    "MissionId": 1001,
+    "isStrong": 1,
+    "complete": 0,
+    "Dialog": 9031,
+    "ArrowType": 0,
+    "DialogAnchor": [],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 0
+  },
+  {
+    "Id": 100201,
+    "MissionId": 1002,
+    "isStrong": 1,
+    "complete": 0,
+    "Dialog": 1102,
+    "ArrowType": 4,
+    "DialogAnchor": [
+      "ShowRolePanel",
+      "btnMail"
+    ],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 0
+  },
+  {
+    "Id": 100202,
+    "MissionId": 1002,
+    "isStrong": 1,
+    "complete": 0,
+    "Dialog": 1103,
+    "ArrowType": 1,
+    "DialogAnchor": [
+      "MailPanel",
+      "mailList",
+      "0"
+    ],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 0
+  },
+  {
+    "Id": 100203,
+    "MissionId": 1002,
+    "isStrong": 1,
+    "complete": 0,
+    "Dialog": 1104,
+    "ArrowType": 4,
+    "DialogAnchor": [
+      "MailPanel",
+      "btnGetRewards"
+    ],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 200
+  },
+  {
+    "Id": 100204,
+    "MissionId": 1002,
+    "isStrong": 1,
+    "complete": 0,
+    "Dialog": 1103,
+    "ArrowType": 0,
+    "DialogAnchor": [
+      "GlobalPanel",
+      "rewardstip"
+    ],
+    "GuideBtn": [],
+    "HideObj": "rewardstip",
+    "DelayTime": 0
+  },
+  {
+    "Id": 100205,
+    "MissionId": 1002,
+    "isStrong": 1,
+    "complete": 1,
+    "Dialog": 1105,
+    "ArrowType": 1,
+    "DialogAnchor": [
+      "MailPanel",
+      "btnReturn"
+    ],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 0
+  },
+  {
+    "Id": 100301,
+    "MissionId": 1003,
+    "isStrong": 1,
+    "complete": 0,
+    "Dialog": 1102,
+    "ArrowType": 4,
+    "DialogAnchor": [
+      "LobbyPanel",
+      "mainSheetList",
+      "6"
+    ],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 0
+  },
+  {
+    "Id": 100302,
+    "MissionId": 1003,
+    "isStrong": 1,
+    "complete": 0,
+    "Dialog": 1103,
+    "ArrowType": 1,
+    "DialogAnchor": [
+      "StagePanel",
+      "groupList",
+      "2"
+    ],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 0
+  },
+  {
+    "Id": 100303,
+    "MissionId": 1003,
+    "isStrong": 1,
+    "complete": 0,
+    "Dialog": 1003,
+    "ArrowType": 1,
+    "DialogAnchor": [
+      "StagePanel",
+      "stageList",
+      "0"
+    ],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 0
+  },
+  {
+    "Id": 100304,
+    "MissionId": 1003,
+    "isStrong": 1,
+    "complete": 1,
+    "Dialog": 1003,
+    "ArrowType": 2,
+    "DialogAnchor": [
+      "StagePanel",
+      "btnEnter"
+    ],
+    "GuideBtn": [],
+    "HideObj": "",
+    "DelayTime": 2000
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "Id": 1001,
+    "Scene": "Map1",
+    "Desc": 1003,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 1,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    }
+  },
+  {
+    "Id": 1002,
+    "Scene": "Map1",
+    "Desc": 1004,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 1,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    }
+  },
+  {
+    "Id": 1003,
+    "Scene": "Map1",
+    "Desc": 1005,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 5,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    }
+  },
+  {
+    "Id": 1004,
+    "Scene": "Map1",
+    "Desc": 1006,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 10,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    }
+  },
+  {
+    "Id": 1005,
+    "Scene": "Map1",
+    "Desc": 1007,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 15,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    }
+  },
+  {
+    "Id": 1006,
+    "Scene": "Map1",
+    "Desc": 1008,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 30,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    }
+  },
+  {
+    "Id": 1007,
+    "Scene": "Map1",
+    "Desc": 1001,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 1,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    }
+  },
+  {
+    "Id": 1008,
+    "Scene": "Map2",
+    "Desc": 1002,
+    "CostItemId": 0,
+    "CostItemCount": 0,
+    "UnlockLevel": 1,
+    "BornPoint": {
+      "x": 30,
+      "y": 0,
+      "z": -28
+    }
+  }
+]

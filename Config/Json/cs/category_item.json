@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "Type": 1,
+    "Subtype": 0,
+    "Name": 10001,
+    "Desc": 30001,
+    "GetDes": [
+      1150
+    ],
+    "IconRes": "icon-gongxianbi",
+    "StackCount": 0,
+    "Duration": 0,
+    "Quality": 4,
+    "ParamInt": 0
+  },
+  {
+    "Id": 2,
+    "Type": 1,
+    "Subtype": 0,
+    "Name": 10002,
+    "Desc": 30002,
+    "GetDes": [
+      1150
+    ],
+    "IconRes": "icon-bojinhuiyuan",
+    "StackCount": 0,
+    "Duration": 0,
+    "Quality": 4,
+    "ParamInt": 0
+  },
+  {
+    "Id": 3,
+    "Type": 1,
+    "Subtype": 0,
+    "Name": 10003,
+    "Desc": 30003,
+    "GetDes": [
+      1150
+    ],
+    "IconRes": "jinquan",
+    "StackCount": 0,
+    "Duration": 0,
+    "Quality": 1,
+    "ParamInt": 0
+  },
+  {
+    "Id": 1000,
+    "Type": 2,
+    "Subtype": 1,
+    "Name": 10004,
+    "Desc": 30004,
+    "GetDes": [
+      1150
+    ],
+    "IconRes": "icon_nianheji",
+    "StackCount": 0,
+    "Duration": 0,
+    "Quality": 3,
+    "ParamInt": 0
+  },
+  {
+    "Id": 1001,
+    "Type": 6,
+    "Subtype": 1,
+    "Name": 12001,
+    "Desc": 32001,
+    "GetDes": [
+      1150
+    ],
+    "IconRes": "icon_yingjigongju_l",
+    "StackCount": 1,
+    "Duration": 0,
+    "Quality": 1,
+    "ParamInt": 100
+  },
+  {
+    "Id": 1002,
+    "Type": 6,
+    "Subtype": 1,
+    "Name": 12001,
+    "Desc": 32001,
+    "GetDes": [
+      1150
+    ],
+    "IconRes": "icon_youtong_l",
+    "StackCount": 1,
+    "Duration": 0,
+    "Quality": 1,
+    "ParamInt": 100
+  }
+]
