@@ -58,7 +58,7 @@ namespace ET
 	[ResponseType(nameof(M2C_TestResponse))]
 	[Message(OuterMessage.C2M_TestRequest)]
 	[MemoryPackable]
-	public partial class C2M_TestRequest: MessageObject, IActorLocationRequest
+	public partial class C2M_TestRequest: MessageObject, ILocationRequest
 	{
 		public static C2M_TestRequest Create(bool isFromPool = true) 
 		{ 
@@ -84,7 +84,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_TestResponse)]
 	[MemoryPackable]
-	public partial class M2C_TestResponse: MessageObject, IActorResponse
+	public partial class M2C_TestResponse: MessageObject, IResponse
 	{
 		public static M2C_TestResponse Create(bool isFromPool = true) 
 		{ 
@@ -119,7 +119,7 @@ namespace ET
 	[ResponseType(nameof(Actor_TransferResponse))]
 	[Message(OuterMessage.Actor_TransferRequest)]
 	[MemoryPackable]
-	public partial class Actor_TransferRequest: MessageObject, IActorLocationRequest
+	public partial class Actor_TransferRequest: MessageObject, ILocationRequest
 	{
 		public static Actor_TransferRequest Create(bool isFromPool = true) 
 		{ 
@@ -145,7 +145,7 @@ namespace ET
 
 	[Message(OuterMessage.Actor_TransferResponse)]
 	[MemoryPackable]
-	public partial class Actor_TransferResponse: MessageObject, IActorLocationResponse
+	public partial class Actor_TransferResponse: MessageObject, ILocationResponse
 	{
 		public static Actor_TransferResponse Create(bool isFromPool = true) 
 		{ 
@@ -176,7 +176,7 @@ namespace ET
 	[ResponseType(nameof(G2C_EnterMap))]
 	[Message(OuterMessage.C2G_EnterMap)]
 	[MemoryPackable]
-	public partial class C2G_EnterMap: MessageObject, IRequest
+	public partial class C2G_EnterMap: MessageObject, ISessionRequest
 	{
 		public static C2G_EnterMap Create(bool isFromPool = true) 
 		{ 
@@ -202,7 +202,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_EnterMap)]
 	[MemoryPackable]
-	public partial class G2C_EnterMap: MessageObject, IResponse
+	public partial class G2C_EnterMap: MessageObject, ISessionResponse
 	{
 		public static G2C_EnterMap Create(bool isFromPool = true) 
 		{ 
@@ -321,7 +321,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_CreateUnits)]
 	[MemoryPackable]
-	public partial class M2C_CreateUnits: MessageObject, IActorMessage
+	public partial class M2C_CreateUnits: MessageObject, ISessionMessage
 	{
 		public static M2C_CreateUnits Create(bool isFromPool = true) 
 		{ 
@@ -343,7 +343,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_CreateMyUnit)]
 	[MemoryPackable]
-	public partial class M2C_CreateMyUnit: MessageObject, IActorMessage
+	public partial class M2C_CreateMyUnit: MessageObject, ISessionMessage
 	{
 		public static M2C_CreateMyUnit Create(bool isFromPool = true) 
 		{ 
@@ -365,7 +365,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_StartSceneChange)]
 	[MemoryPackable]
-	public partial class M2C_StartSceneChange: MessageObject, IActorMessage
+	public partial class M2C_StartSceneChange: MessageObject, ISessionMessage
 	{
 		public static M2C_StartSceneChange Create(bool isFromPool = true) 
 		{ 
@@ -391,7 +391,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_RemoveUnits)]
 	[MemoryPackable]
-	public partial class M2C_RemoveUnits: MessageObject, IActorMessage
+	public partial class M2C_RemoveUnits: MessageObject, ISessionMessage
 	{
 		public static M2C_RemoveUnits Create(bool isFromPool = true) 
 		{ 
@@ -414,7 +414,7 @@ namespace ET
 //持续移动请求(服务器直接校验并记录位置即可)
 	[Message(OuterMessage.C2M_KeepMoveResult)]
 	[MemoryPackable]
-	public partial class C2M_KeepMoveResult: MessageObject, IActorLocationMessage
+	public partial class C2M_KeepMoveResult: MessageObject, ILocationMessage
 	{
 		public static C2M_KeepMoveResult Create(bool isFromPool = true) 
 		{ 
@@ -444,7 +444,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_KeepMoveResult)]
 	[MemoryPackable]
-	public partial class M2C_KeepMoveResult: MessageObject, IActorMessage
+	public partial class M2C_KeepMoveResult: MessageObject, ISessionMessage
 	{
 		public static M2C_KeepMoveResult Create(bool isFromPool = true) 
 		{ 
@@ -479,7 +479,7 @@ namespace ET
 //寻路移动请求
 	[Message(OuterMessage.C2M_PathfindingResult)]
 	[MemoryPackable]
-	public partial class C2M_PathfindingResult: MessageObject, IActorLocationMessage
+	public partial class C2M_PathfindingResult: MessageObject, ILocationMessage
 	{
 		public static C2M_PathfindingResult Create(bool isFromPool = true) 
 		{ 
@@ -505,7 +505,7 @@ namespace ET
 
 	[Message(OuterMessage.C2M_Stop)]
 	[MemoryPackable]
-	public partial class C2M_Stop: MessageObject, IActorLocationMessage
+	public partial class C2M_Stop: MessageObject, ILocationMessage
 	{
 		public static C2M_Stop Create(bool isFromPool = true) 
 		{ 
@@ -527,7 +527,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_PathfindingResult)]
 	[MemoryPackable]
-	public partial class M2C_PathfindingResult: MessageObject, IActorMessage
+	public partial class M2C_PathfindingResult: MessageObject, ISessionMessage
 	{
 		public static M2C_PathfindingResult Create(bool isFromPool = true) 
 		{ 
@@ -557,7 +557,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_Stop)]
 	[MemoryPackable]
-	public partial class M2C_Stop: MessageObject, IActorMessage
+	public partial class M2C_Stop: MessageObject, ISessionMessage
 	{
 		public static M2C_Stop Create(bool isFromPool = true) 
 		{ 
@@ -592,7 +592,7 @@ namespace ET
 	[ResponseType(nameof(G2C_Ping))]
 	[Message(OuterMessage.C2G_Ping)]
 	[MemoryPackable]
-	public partial class C2G_Ping: MessageObject, IRequest
+	public partial class C2G_Ping: MessageObject, ISessionRequest
 	{
 		public static C2G_Ping Create(bool isFromPool = true) 
 		{ 
@@ -614,7 +614,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_Ping)]
 	[MemoryPackable]
-	public partial class G2C_Ping: MessageObject, IResponse
+	public partial class G2C_Ping: MessageObject, ISessionResponse
 	{
 		public static G2C_Ping Create(bool isFromPool = true) 
 		{ 
@@ -648,7 +648,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_Test)]
 	[MemoryPackable]
-	public partial class G2C_Test: MessageObject, IMessage
+	public partial class G2C_Test: MessageObject, ISessionMessage
 	{
 		public static G2C_Test Create(bool isFromPool = true) 
 		{ 
@@ -667,7 +667,7 @@ namespace ET
 	[ResponseType(nameof(M2C_Reload))]
 	[Message(OuterMessage.C2M_Reload)]
 	[MemoryPackable]
-	public partial class C2M_Reload: MessageObject, IRequest
+	public partial class C2M_Reload: MessageObject, ISessionRequest
 	{
 		public static C2M_Reload Create(bool isFromPool = true) 
 		{ 
@@ -697,7 +697,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_Reload)]
 	[MemoryPackable]
-	public partial class M2C_Reload: MessageObject, IResponse
+	public partial class M2C_Reload: MessageObject, ISessionResponse
 	{
 		public static M2C_Reload Create(bool isFromPool = true) 
 		{ 
@@ -728,7 +728,7 @@ namespace ET
 	[ResponseType(nameof(R2C_Login))]
 	[Message(OuterMessage.C2R_Login)]
 	[MemoryPackable]
-	public partial class C2R_Login: MessageObject, IRequest
+	public partial class C2R_Login: MessageObject, ISessionRequest
 	{
 		public static C2R_Login Create(bool isFromPool = true) 
 		{ 
@@ -758,7 +758,7 @@ namespace ET
 
 	[Message(OuterMessage.R2C_Login)]
 	[MemoryPackable]
-	public partial class R2C_Login: MessageObject, IResponse
+	public partial class R2C_Login: MessageObject, ISessionResponse
 	{
 		public static R2C_Login Create(bool isFromPool = true) 
 		{ 
@@ -801,7 +801,7 @@ namespace ET
 	[ResponseType(nameof(G2C_LoginGate))]
 	[Message(OuterMessage.C2G_LoginGate)]
 	[MemoryPackable]
-	public partial class C2G_LoginGate: MessageObject, IRequest
+	public partial class C2G_LoginGate: MessageObject, ISessionRequest
 	{
 		public static C2G_LoginGate Create(bool isFromPool = true) 
 		{ 
@@ -831,7 +831,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_LoginGate)]
 	[MemoryPackable]
-	public partial class G2C_LoginGate: MessageObject, IResponse
+	public partial class G2C_LoginGate: MessageObject, ISessionResponse
 	{
 		public static G2C_LoginGate Create(bool isFromPool = true) 
 		{ 
@@ -869,7 +869,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_TestHotfixMessage)]
 	[MemoryPackable]
-	public partial class G2C_TestHotfixMessage: MessageObject, IMessage
+	public partial class G2C_TestHotfixMessage: MessageObject, ISessionMessage
 	{
 		public static G2C_TestHotfixMessage Create(bool isFromPool = true) 
 		{ 
@@ -892,7 +892,7 @@ namespace ET
 	[ResponseType(nameof(M2C_TestRobotCase))]
 	[Message(OuterMessage.C2M_TestRobotCase)]
 	[MemoryPackable]
-	public partial class C2M_TestRobotCase: MessageObject, IActorLocationRequest
+	public partial class C2M_TestRobotCase: MessageObject, ILocationRequest
 	{
 		public static C2M_TestRobotCase Create(bool isFromPool = true) 
 		{ 
@@ -918,7 +918,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_TestRobotCase)]
 	[MemoryPackable]
-	public partial class M2C_TestRobotCase: MessageObject, IActorLocationResponse
+	public partial class M2C_TestRobotCase: MessageObject, ILocationResponse
 	{
 		public static M2C_TestRobotCase Create(bool isFromPool = true) 
 		{ 
@@ -952,7 +952,7 @@ namespace ET
 
 	[Message(OuterMessage.C2M_TestRobotCase2)]
 	[MemoryPackable]
-	public partial class C2M_TestRobotCase2: MessageObject, IActorLocationMessage
+	public partial class C2M_TestRobotCase2: MessageObject, ILocationMessage
 	{
 		public static C2M_TestRobotCase2 Create(bool isFromPool = true) 
 		{ 
@@ -978,7 +978,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_TestRobotCase2)]
 	[MemoryPackable]
-	public partial class M2C_TestRobotCase2: MessageObject, IActorLocationMessage
+	public partial class M2C_TestRobotCase2: MessageObject, ILocationMessage
 	{
 		public static M2C_TestRobotCase2 Create(bool isFromPool = true) 
 		{ 
@@ -1005,7 +1005,7 @@ namespace ET
 	[ResponseType(nameof(M2C_TransferMap))]
 	[Message(OuterMessage.C2M_TransferMap)]
 	[MemoryPackable]
-	public partial class C2M_TransferMap: MessageObject, IActorLocationRequest
+	public partial class C2M_TransferMap: MessageObject, ILocationRequest
 	{
 		public static C2M_TransferMap Create(bool isFromPool = true) 
 		{ 
@@ -1027,7 +1027,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_TransferMap)]
 	[MemoryPackable]
-	public partial class M2C_TransferMap: MessageObject, IActorLocationResponse
+	public partial class M2C_TransferMap: MessageObject, ILocationResponse
 	{
 		public static M2C_TransferMap Create(bool isFromPool = true) 
 		{ 
@@ -1058,7 +1058,7 @@ namespace ET
 	[ResponseType(nameof(M2C_ExitMap))]
 	[Message(OuterMessage.C2M_ExitMap)]
 	[MemoryPackable]
-	public partial class C2M_ExitMap: MessageObject, IActorLocationRequest
+	public partial class C2M_ExitMap: MessageObject, ILocationRequest
 	{
 		public static C2M_ExitMap Create(bool isFromPool = true) 
 		{ 
@@ -1080,7 +1080,7 @@ namespace ET
 
 	[Message(OuterMessage.M2C_ExitMap)]
 	[MemoryPackable]
-	public partial class M2C_ExitMap: MessageObject, IActorLocationResponse
+	public partial class M2C_ExitMap: MessageObject, ILocationResponse
 	{
 		public static M2C_ExitMap Create(bool isFromPool = true) 
 		{ 
@@ -1111,7 +1111,7 @@ namespace ET
 	[ResponseType(nameof(G2C_Benchmark))]
 	[Message(OuterMessage.C2G_Benchmark)]
 	[MemoryPackable]
-	public partial class C2G_Benchmark: MessageObject, IRequest
+	public partial class C2G_Benchmark: MessageObject, ISessionRequest
 	{
 		public static C2G_Benchmark Create(bool isFromPool = true) 
 		{ 
@@ -1133,7 +1133,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_Benchmark)]
 	[MemoryPackable]
-	public partial class G2C_Benchmark: MessageObject, IResponse
+	public partial class G2C_Benchmark: MessageObject, ISessionResponse
 	{
 		public static G2C_Benchmark Create(bool isFromPool = true) 
 		{ 
@@ -1164,7 +1164,7 @@ namespace ET
 	[ResponseType(nameof(G2C_UseItem))]
 	[Message(OuterMessage.C2G_UseItem)]
 	[MemoryPackable]
-	public partial class C2G_UseItem: MessageObject, IRequest
+	public partial class C2G_UseItem: MessageObject, ISessionRequest
 	{
 		public static C2G_UseItem Create(bool isFromPool = true) 
 		{ 
@@ -1194,7 +1194,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_UseItem)]
 	[MemoryPackable]
-	public partial class G2C_UseItem: MessageObject, IResponse
+	public partial class G2C_UseItem: MessageObject, ISessionResponse
 	{
 		public static G2C_UseItem Create(bool isFromPool = true) 
 		{ 
@@ -1225,7 +1225,7 @@ namespace ET
 	[ResponseType(nameof(G2C_SellItem))]
 	[Message(OuterMessage.C2G_SellItem)]
 	[MemoryPackable]
-	public partial class C2G_SellItem: MessageObject, IRequest
+	public partial class C2G_SellItem: MessageObject, ISessionRequest
 	{
 		public static C2G_SellItem Create(bool isFromPool = true) 
 		{ 
@@ -1251,7 +1251,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_SellItem)]
 	[MemoryPackable]
-	public partial class G2C_SellItem: MessageObject, IResponse
+	public partial class G2C_SellItem: MessageObject, ISessionResponse
 	{
 		public static G2C_SellItem Create(bool isFromPool = true) 
 		{ 
@@ -1282,7 +1282,7 @@ namespace ET
 	[ResponseType(nameof(G2C_ChangeMission))]
 	[Message(OuterMessage.C2G_ChangeMission)]
 	[MemoryPackable]
-	public partial class C2G_ChangeMission: MessageObject, IRequest
+	public partial class C2G_ChangeMission: MessageObject, ISessionRequest
 	{
 		public static C2G_ChangeMission Create(bool isFromPool = true) 
 		{ 
@@ -1312,7 +1312,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_ChangeMission)]
 	[MemoryPackable]
-	public partial class G2C_ChangeMission: MessageObject, IResponse
+	public partial class G2C_ChangeMission: MessageObject, ISessionResponse
 	{
 		public static G2C_ChangeMission Create(bool isFromPool = true) 
 		{ 
@@ -1343,7 +1343,7 @@ namespace ET
 //任务信息改变
 	[Message(OuterMessage.Msg_MissionProcess)]
 	[MemoryPackable]
-	public partial class Msg_MissionProcess: MessageObject, IMessage
+	public partial class Msg_MissionProcess: MessageObject, ISessionMessage
 	{
 		public static Msg_MissionProcess Create(bool isFromPool = true) 
 		{ 
@@ -1374,7 +1374,7 @@ namespace ET
 	[ResponseType(nameof(G2C_CreateRole))]
 	[Message(OuterMessage.C2G_CreateRole)]
 	[MemoryPackable]
-	public partial class C2G_CreateRole: MessageObject, IRequest
+	public partial class C2G_CreateRole: MessageObject, ISessionRequest
 	{
 		public static C2G_CreateRole Create(bool isFromPool = true) 
 		{ 
@@ -1404,7 +1404,7 @@ namespace ET
 
 	[Message(OuterMessage.G2C_CreateRole)]
 	[MemoryPackable]
-	public partial class G2C_CreateRole: MessageObject, IResponse
+	public partial class G2C_CreateRole: MessageObject, ISessionResponse
 	{
 		public static G2C_CreateRole Create(bool isFromPool = true) 
 		{ 
@@ -1439,7 +1439,7 @@ namespace ET
 //邮件信息
 	[Message(OuterMessage.Msg_PlayerMails)]
 	[MemoryPackable]
-	public partial class Msg_PlayerMails: MessageObject, IMessage
+	public partial class Msg_PlayerMails: MessageObject, ISessionMessage
 	{
 		public static Msg_PlayerMails Create(bool isFromPool = true) 
 		{ 
@@ -1466,7 +1466,7 @@ namespace ET
 //邮件信息
 	[Message(OuterMessage.Msg_UnlockSystems)]
 	[MemoryPackable]
-	public partial class Msg_UnlockSystems: MessageObject, IMessage
+	public partial class Msg_UnlockSystems: MessageObject, ISessionMessage
 	{
 		public static Msg_UnlockSystems Create(bool isFromPool = true) 
 		{ 
@@ -1493,7 +1493,7 @@ namespace ET
 //邮件信息
 	[Message(OuterMessage.Msg_SetMailState)]
 	[MemoryPackable]
-	public partial class Msg_SetMailState: MessageObject, IMessage
+	public partial class Msg_SetMailState: MessageObject, ISessionMessage
 	{
 		public static Msg_SetMailState Create(bool isFromPool = true) 
 		{ 
@@ -1520,7 +1520,7 @@ namespace ET
 //红点信息
 	[Message(OuterMessage.Msg_RedPoint)]
 	[MemoryPackable]
-	public partial class Msg_RedPoint: MessageObject, IMessage
+	public partial class Msg_RedPoint: MessageObject, ISessionMessage
 	{
 		public static Msg_RedPoint Create(bool isFromPool = true) 
 		{ 
@@ -1547,7 +1547,7 @@ namespace ET
 //推送提示消息 或 跑马灯
 	[Message(OuterMessage.Msg_BroadcastTip)]
 	[MemoryPackable]
-	public partial class Msg_BroadcastTip: MessageObject, IMessage
+	public partial class Msg_BroadcastTip: MessageObject, ISessionMessage
 	{
 		public static Msg_BroadcastTip Create(bool isFromPool = true) 
 		{ 
@@ -1570,7 +1570,7 @@ namespace ET
 //刷新player及 挂载的组件数据
 	[Message(OuterMessage.Msg_BroadcastPlayer)]
 	[MemoryPackable]
-	public partial class Msg_BroadcastPlayer: MessageObject, IMessage
+	public partial class Msg_BroadcastPlayer: MessageObject, ISessionMessage
 	{
 		public static Msg_BroadcastPlayer Create(bool isFromPool = true) 
 		{ 
@@ -1601,7 +1601,7 @@ namespace ET
 //推送奖励道具
 	[Message(OuterMessage.Msg_BroadcastRewards)]
 	[MemoryPackable]
-	public partial class Msg_BroadcastRewards: MessageObject, IMessage
+	public partial class Msg_BroadcastRewards: MessageObject, ISessionMessage
 	{
 		public static Msg_BroadcastRewards Create(bool isFromPool = true) 
 		{ 
@@ -1628,7 +1628,7 @@ namespace ET
 //道具信息
 	[Message(OuterMessage.Msg_Item)]
 	[MemoryPackable]
-	public partial class Msg_Item: MessageObject, IMessage
+	public partial class Msg_Item: MessageObject, ISessionMessage
 	{
 		public static Msg_Item Create(bool isFromPool = true) 
 		{ 
@@ -1663,7 +1663,7 @@ namespace ET
 //字典信息
 	[Message(OuterMessage.KeyVal_Int)]
 	[MemoryPackable]
-	public partial class KeyVal_Int: MessageObject, IMessage
+	public partial class KeyVal_Int: MessageObject, ISessionMessage
 	{
 		public static KeyVal_Int Create(bool isFromPool = true) 
 		{ 
@@ -1689,7 +1689,7 @@ namespace ET
 
 	[Message(OuterMessage.Msg_BroadCast)]
 	[MemoryPackable]
-	public partial class Msg_BroadCast: MessageObject, IActorBroadCast
+	public partial class Msg_BroadCast: MessageObject, IBroadCast
 	{
 		public static Msg_BroadCast Create(bool isFromPool = true) 
 		{ 

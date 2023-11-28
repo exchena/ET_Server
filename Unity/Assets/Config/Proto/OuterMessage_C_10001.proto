@@ -14,13 +14,13 @@ message RouterSync
 }
 
 //ResponseType M2C_TestResponse
-message C2M_TestRequest // IActorLocationRequest
+message C2M_TestRequest // ILocationRequest
 {
   int32 RpcId = 1;
   string request = 2;
 }
 
-message M2C_TestResponse // IActorResponse
+message M2C_TestResponse // IResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -29,13 +29,13 @@ message M2C_TestResponse // IActorResponse
 }
 
 //ResponseType Actor_TransferResponse
-message Actor_TransferRequest // IActorLocationRequest
+message Actor_TransferRequest // ILocationRequest
 {
   int32 RpcId = 1;
   int32 MapIndex = 2;
 }
 
-message Actor_TransferResponse // IActorLocationResponse
+message Actor_TransferResponse // ILocationResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -43,13 +43,13 @@ message Actor_TransferResponse // IActorLocationResponse
 }
 
 //ResponseType G2C_EnterMap
-message C2G_EnterMap // IRequest
+message C2G_EnterMap // ISessionRequest
 {
   int32 RpcId = 1;
   int32 StageId = 2;
 }
 
-message G2C_EnterMap // IResponse
+message G2C_EnterMap // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -78,36 +78,36 @@ message UnitInfo
   repeated bytes Entitys = 9;
 }
 
-message M2C_CreateUnits // IActorMessage
+message M2C_CreateUnits // ISessionMessage
 {
   repeated UnitInfo Units = 1;
 }
 
-message M2C_CreateMyUnit // IActorMessage
+message M2C_CreateMyUnit // ISessionMessage
 {
   UnitInfo Unit = 1;
 }
 
-message M2C_StartSceneChange // IActorMessage
+message M2C_StartSceneChange // ISessionMessage
 {
   int64 SceneInstanceId = 1;
   string SceneName = 2;
 }
 
-message M2C_RemoveUnits // IActorMessage
+message M2C_RemoveUnits // ISessionMessage
 {
   repeated int64 Units = 1;
 }
 
 //持续移动请求(服务器直接校验并记录位置即可)
-message C2M_KeepMoveResult // IActorLocationMessage
+message C2M_KeepMoveResult // ILocationMessage
 {
   int32 RpcId = 1;
   Unity.Mathematics.float3 Position = 2;
   int32 FaceAngle = 3; //旋转角度, 即角色面向
 }
 
-message M2C_KeepMoveResult // IActorMessage
+message M2C_KeepMoveResult // ISessionMessage
 {
   int64 Id = 1;
   Unity.Mathematics.float3 Position = 2;
@@ -116,25 +116,25 @@ message M2C_KeepMoveResult // IActorMessage
 }
 
 //寻路移动请求
-message C2M_PathfindingResult // IActorLocationMessage
+message C2M_PathfindingResult // ILocationMessage
 {
   int32 RpcId = 1;
   Unity.Mathematics.float3 Position = 2;
 }
 
-message C2M_Stop // IActorLocationMessage
+message C2M_Stop // ILocationMessage
 {
   int32 RpcId = 1;
 }
 
-message M2C_PathfindingResult // IActorMessage
+message M2C_PathfindingResult // ISessionMessage
 {
   int64 Id = 1;
   Unity.Mathematics.float3 Position = 2;
   repeated Unity.Mathematics.float3 Points = 3;
 }
 
-message M2C_Stop // IActorMessage
+message M2C_Stop // ISessionMessage
 {
   int32 Error = 1;
   int64 Id = 2;
@@ -143,12 +143,12 @@ message M2C_Stop // IActorMessage
 }
 
 //ResponseType G2C_Ping
-message C2G_Ping // IRequest
+message C2G_Ping // ISessionRequest
 {
   int32 RpcId = 1;
 }
 
-message G2C_Ping // IResponse
+message G2C_Ping // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -157,19 +157,19 @@ message G2C_Ping // IResponse
 }
 
 
-message G2C_Test // IMessage
+message G2C_Test // ISessionMessage
 {
 }
 
 //ResponseType M2C_Reload
-message C2M_Reload // IRequest
+message C2M_Reload // ISessionRequest
 {
   int32 RpcId = 1;
   string Account = 2;
   string Password = 3;
 }
 
-message M2C_Reload // IResponse
+message M2C_Reload // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -177,14 +177,14 @@ message M2C_Reload // IResponse
 }
 
 //ResponseType R2C_Login
-message C2R_Login // IRequest
+message C2R_Login // ISessionRequest
 {
   int32 RpcId = 1;
   string  Account = 2;  // 帐号
   string  Password = 3;  // 密码
 }
 
-message R2C_Login // IResponse
+message R2C_Login // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -195,14 +195,14 @@ message R2C_Login // IResponse
 }
 
 //ResponseType G2C_LoginGate
-message C2G_LoginGate // IRequest
+message C2G_LoginGate // ISessionRequest
 {
   int32 RpcId = 1;
   int64 Key = 2;  // 帐号
   int64 GateId = 3;
 }
 
-message G2C_LoginGate // IResponse
+message G2C_LoginGate // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -211,19 +211,19 @@ message G2C_LoginGate // IResponse
   Msg_BroadcastPlayer PlayerDatas = 5; //玩家的数据及其组件数据
 }
 
-message G2C_TestHotfixMessage // IMessage
+message G2C_TestHotfixMessage // ISessionMessage
 {
   string Info = 1;
 }
 
 //ResponseType M2C_TestRobotCase
-message C2M_TestRobotCase // IActorLocationRequest
+message C2M_TestRobotCase // ILocationRequest
 {
   int32 RpcId = 1;
   int32 N = 2;
 }
 
-message M2C_TestRobotCase // IActorLocationResponse
+message M2C_TestRobotCase // ILocationResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -231,25 +231,25 @@ message M2C_TestRobotCase // IActorLocationResponse
   int32 N = 4;
 }
 
-message C2M_TestRobotCase2 // IActorLocationMessage
+message C2M_TestRobotCase2 // ILocationMessage
 {
   int32 RpcId = 1;
   int32 N = 2;
 }
 
-message M2C_TestRobotCase2 // IActorLocationMessage
+message M2C_TestRobotCase2 // ILocationMessage
 {
   int32 RpcId = 1;
   int32 N = 2;
 }
 
 //ResponseType M2C_TransferMap
-message C2M_TransferMap // IActorLocationRequest
+message C2M_TransferMap // ILocationRequest
 {
   int32 RpcId = 1;
 }
 
-message M2C_TransferMap // IActorLocationResponse
+message M2C_TransferMap // ILocationResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -257,12 +257,12 @@ message M2C_TransferMap // IActorLocationResponse
 }
 
 //ResponseType M2C_ExitMap
-message C2M_ExitMap // IActorLocationRequest
+message C2M_ExitMap // ILocationRequest
 {
   int32 RpcId = 1;
 }
 
-message M2C_ExitMap // IActorLocationResponse
+message M2C_ExitMap // ILocationResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -270,12 +270,12 @@ message M2C_ExitMap // IActorLocationResponse
 }
 
 //ResponseType G2C_Benchmark
-message C2G_Benchmark // IRequest
+message C2G_Benchmark // ISessionRequest
 {
   int32 RpcId = 1;
 }
 
-message G2C_Benchmark // IResponse
+message G2C_Benchmark // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -283,14 +283,14 @@ message G2C_Benchmark // IResponse
 }
 
 //ResponseType G2C_UseItem
-message C2G_UseItem // IRequest
+message C2G_UseItem // ISessionRequest
 {
   int32 RpcId = 1;
   int64 ItemId = 2;
   int32 UseType = 3;   //0: 使用道具
 }
 
-message G2C_UseItem // IResponse
+message G2C_UseItem // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -298,13 +298,13 @@ message G2C_UseItem // IResponse
 }
 
 //ResponseType G2C_SellItem
-message C2G_SellItem // IRequest
+message C2G_SellItem // ISessionRequest
 {
   int32 RpcId = 1;
   repeated int64 ItemIds = 2;
 }
 
-message G2C_SellItem // IResponse
+message G2C_SellItem // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -312,14 +312,14 @@ message G2C_SellItem // IResponse
 }
 
 //ResponseType G2C_ChangeMission
-message C2G_ChangeMission // IRequest
+message C2G_ChangeMission // ISessionRequest
 {
   int32 RpcId = 1;
   int32 MissionId = 2;
   int32 Type = 3;   //0: 领取任务奖励,  1 完成引导任务
 }
 
-message G2C_ChangeMission // IResponse
+message G2C_ChangeMission // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -327,7 +327,7 @@ message G2C_ChangeMission // IResponse
 }
 
 //任务信息改变
-message Msg_MissionProcess // IMessage
+message Msg_MissionProcess // ISessionMessage
 {
   int32 GoalType = 1;
   int32 ParamX = 2;
@@ -335,14 +335,14 @@ message Msg_MissionProcess // IMessage
 }
 
 //ResponseType G2C_CreateRole
-message C2G_CreateRole // IRequest
+message C2G_CreateRole // ISessionRequest
 {
   int32 RpcId = 1;
   bytes RoleMeshInfo = 2;
   string PlayerName = 3;
 }
 
-message G2C_CreateRole // IResponse
+message G2C_CreateRole // ISessionResponse
 {
   int32 RpcId = 1;
   int32 Error = 2;
@@ -351,41 +351,41 @@ message G2C_CreateRole // IResponse
 }
 
 //邮件信息
-message Msg_PlayerMails // IMessage
+message Msg_PlayerMails // ISessionMessage
 {
   repeated bytes Mails = 1;
   bool FullMail = 2; // true 则表示推送的是玩家完整的邮件, false则表示为新增的邮件
 }
 
 //邮件信息
-message Msg_UnlockSystems // IMessage
+message Msg_UnlockSystems // ISessionMessage
 {
   repeated int32 Systems = 1;
   bool AllSystem = 2; // true 表示所有系统, false则表示为新解锁的系统
 }
 
 //邮件信息
-message Msg_SetMailState // IMessage
+message Msg_SetMailState // ISessionMessage
 {
   int64 MailId = 1; // -1则表示所有邮件
   int32 State = 2;
 }
 
 //红点信息
-message Msg_RedPoint // IMessage
+message Msg_RedPoint // ISessionMessage
 {
   int32 SystemId = 1; // 系统Id
   int32 ParamId = 2; // 页签序号或任务ID等附带参数, 可无
 }
 
 //推送提示消息 或 跑马灯
-message  Msg_BroadcastTip // IMessage
+message  Msg_BroadcastTip // ISessionMessage
 {
   int32 TipId = 1;
 }
 
 //刷新player及 挂载的组件数据
-message Msg_BroadcastPlayer // IMessage
+message Msg_BroadcastPlayer // ISessionMessage
 {
   bytes Player = 1;
   repeated bytes Entitys = 2; // 组件数据
@@ -394,7 +394,7 @@ message Msg_BroadcastPlayer // IMessage
 
 
 //推送奖励道具
-message Msg_BroadcastRewards // IMessage
+message Msg_BroadcastRewards // ISessionMessage
 {
   repeated Msg_Item Rewards = 1; // 道具
   bool CostItem = 2; //false为 奖励信息   true为 消耗道具信息
@@ -402,7 +402,7 @@ message Msg_BroadcastRewards // IMessage
 
 
 //道具信息
-message Msg_Item // IMessage
+message Msg_Item // ISessionMessage
 {
   int64 Id = 1;
   int32 ItemConfigId = 2;
@@ -411,13 +411,13 @@ message Msg_Item // IMessage
 }
 
 //字典信息
-message KeyVal_Int // IMessage
+message KeyVal_Int // ISessionMessage
 {
   int32 Key = 1;
   int32 Val = 2;
 }
 
-message  Msg_BroadCast // IActorBroadCast
+message  Msg_BroadCast // IBroadCast
 {
   int64 Id = 1;
   repeated int64 ListId = 2;
