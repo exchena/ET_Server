@@ -7,7 +7,7 @@ namespace ET
 	[ResponseType(nameof(ObjectQueryResponse))]
 	[Message(InnerMessage.ObjectQueryRequest)]
 	[MemoryPackable]
-	public partial class ObjectQueryRequest: MessageObject, IRequest
+	public partial class ObjectQueryRequest: MessageObject, IActorRequest
 	{
 		public static ObjectQueryRequest Create(bool isFromPool = true) 
 		{ 
@@ -38,7 +38,7 @@ namespace ET
 	[ResponseType(nameof(A2M_Reload))]
 	[Message(InnerMessage.M2A_Reload)]
 	[MemoryPackable]
-	public partial class M2A_Reload: MessageObject, IRequest
+	public partial class M2A_Reload: MessageObject, IActorRequest
 	{
 		public static M2A_Reload Create(bool isFromPool = true) 
 		{ 
@@ -60,7 +60,7 @@ namespace ET
 
 	[Message(InnerMessage.A2M_Reload)]
 	[MemoryPackable]
-	public partial class A2M_Reload: MessageObject, IResponse
+	public partial class A2M_Reload: MessageObject, IActorResponse
 	{
 		public static A2M_Reload Create(bool isFromPool = true) 
 		{ 
@@ -91,7 +91,7 @@ namespace ET
 	[ResponseType(nameof(G2G_LockResponse))]
 	[Message(InnerMessage.G2G_LockRequest)]
 	[MemoryPackable]
-	public partial class G2G_LockRequest: MessageObject, IRequest
+	public partial class G2G_LockRequest: MessageObject, IActorRequest
 	{
 		public static G2G_LockRequest Create(bool isFromPool = true) 
 		{ 
@@ -121,7 +121,7 @@ namespace ET
 
 	[Message(InnerMessage.G2G_LockResponse)]
 	[MemoryPackable]
-	public partial class G2G_LockResponse: MessageObject, IResponse
+	public partial class G2G_LockResponse: MessageObject, IActorResponse
 	{
 		public static G2G_LockResponse Create(bool isFromPool = true) 
 		{ 
@@ -152,7 +152,7 @@ namespace ET
 	[ResponseType(nameof(G2G_LockReleaseResponse))]
 	[Message(InnerMessage.G2G_LockReleaseRequest)]
 	[MemoryPackable]
-	public partial class G2G_LockReleaseRequest: MessageObject, IRequest
+	public partial class G2G_LockReleaseRequest: MessageObject, IActorRequest
 	{
 		public static G2G_LockReleaseRequest Create(bool isFromPool = true) 
 		{ 
@@ -182,7 +182,7 @@ namespace ET
 
 	[Message(InnerMessage.G2G_LockReleaseResponse)]
 	[MemoryPackable]
-	public partial class G2G_LockReleaseResponse: MessageObject, IResponse
+	public partial class G2G_LockReleaseResponse: MessageObject, IActorResponse
 	{
 		public static G2G_LockReleaseResponse Create(bool isFromPool = true) 
 		{ 
@@ -213,7 +213,7 @@ namespace ET
 	[ResponseType(nameof(ObjectAddResponse))]
 	[Message(InnerMessage.ObjectAddRequest)]
 	[MemoryPackable]
-	public partial class ObjectAddRequest: MessageObject, IRequest
+	public partial class ObjectAddRequest: MessageObject, IActorRequest
 	{
 		public static ObjectAddRequest Create(bool isFromPool = true) 
 		{ 
@@ -230,7 +230,7 @@ namespace ET
 		public long Key { get; set; }
 
 		[MemoryPackOrder(3)]
-		public ActorId ActorId { get; set; }
+		public long InstanceId { get; set; }
 
 		public override void Dispose() 
 		{
@@ -238,7 +238,7 @@ namespace ET
 			this.RpcId = default;
 			this.Type = default;
 			this.Key = default;
-			this.ActorId = default;
+			this.InstanceId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -247,7 +247,7 @@ namespace ET
 
 	[Message(InnerMessage.ObjectAddResponse)]
 	[MemoryPackable]
-	public partial class ObjectAddResponse: MessageObject, IResponse
+	public partial class ObjectAddResponse: MessageObject, IActorResponse
 	{
 		public static ObjectAddResponse Create(bool isFromPool = true) 
 		{ 
@@ -278,7 +278,7 @@ namespace ET
 	[ResponseType(nameof(ObjectLockResponse))]
 	[Message(InnerMessage.ObjectLockRequest)]
 	[MemoryPackable]
-	public partial class ObjectLockRequest: MessageObject, IRequest
+	public partial class ObjectLockRequest: MessageObject, IActorRequest
 	{
 		public static ObjectLockRequest Create(bool isFromPool = true) 
 		{ 
@@ -295,7 +295,7 @@ namespace ET
 		public long Key { get; set; }
 
 		[MemoryPackOrder(3)]
-		public ActorId ActorId { get; set; }
+		public long InstanceId { get; set; }
 
 		[MemoryPackOrder(4)]
 		public int Time { get; set; }
@@ -306,7 +306,7 @@ namespace ET
 			this.RpcId = default;
 			this.Type = default;
 			this.Key = default;
-			this.ActorId = default;
+			this.InstanceId = default;
 			this.Time = default;
 			
 			ObjectPool.Instance.Recycle(this); 
@@ -316,7 +316,7 @@ namespace ET
 
 	[Message(InnerMessage.ObjectLockResponse)]
 	[MemoryPackable]
-	public partial class ObjectLockResponse: MessageObject, IResponse
+	public partial class ObjectLockResponse: MessageObject, IActorResponse
 	{
 		public static ObjectLockResponse Create(bool isFromPool = true) 
 		{ 
@@ -347,7 +347,7 @@ namespace ET
 	[ResponseType(nameof(ObjectUnLockResponse))]
 	[Message(InnerMessage.ObjectUnLockRequest)]
 	[MemoryPackable]
-	public partial class ObjectUnLockRequest: MessageObject, IRequest
+	public partial class ObjectUnLockRequest: MessageObject, IActorRequest
 	{
 		public static ObjectUnLockRequest Create(bool isFromPool = true) 
 		{ 
@@ -364,10 +364,10 @@ namespace ET
 		public long Key { get; set; }
 
 		[MemoryPackOrder(3)]
-		public ActorId OldActorId { get; set; }
+		public long OldInstanceId { get; set; }
 
 		[MemoryPackOrder(4)]
-		public ActorId NewActorId { get; set; }
+		public long InstanceId { get; set; }
 
 		public override void Dispose() 
 		{
@@ -375,8 +375,8 @@ namespace ET
 			this.RpcId = default;
 			this.Type = default;
 			this.Key = default;
-			this.OldActorId = default;
-			this.NewActorId = default;
+			this.OldInstanceId = default;
+			this.InstanceId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -385,7 +385,7 @@ namespace ET
 
 	[Message(InnerMessage.ObjectUnLockResponse)]
 	[MemoryPackable]
-	public partial class ObjectUnLockResponse: MessageObject, IResponse
+	public partial class ObjectUnLockResponse: MessageObject, IActorResponse
 	{
 		public static ObjectUnLockResponse Create(bool isFromPool = true) 
 		{ 
@@ -416,7 +416,7 @@ namespace ET
 	[ResponseType(nameof(ObjectRemoveResponse))]
 	[Message(InnerMessage.ObjectRemoveRequest)]
 	[MemoryPackable]
-	public partial class ObjectRemoveRequest: MessageObject, IRequest
+	public partial class ObjectRemoveRequest: MessageObject, IActorRequest
 	{
 		public static ObjectRemoveRequest Create(bool isFromPool = true) 
 		{ 
@@ -446,7 +446,7 @@ namespace ET
 
 	[Message(InnerMessage.ObjectRemoveResponse)]
 	[MemoryPackable]
-	public partial class ObjectRemoveResponse: MessageObject, IResponse
+	public partial class ObjectRemoveResponse: MessageObject, IActorResponse
 	{
 		public static ObjectRemoveResponse Create(bool isFromPool = true) 
 		{ 
@@ -477,7 +477,7 @@ namespace ET
 	[ResponseType(nameof(ObjectGetResponse))]
 	[Message(InnerMessage.ObjectGetRequest)]
 	[MemoryPackable]
-	public partial class ObjectGetRequest: MessageObject, IRequest
+	public partial class ObjectGetRequest: MessageObject, IActorRequest
 	{
 		public static ObjectGetRequest Create(bool isFromPool = true) 
 		{ 
@@ -507,7 +507,7 @@ namespace ET
 
 	[Message(InnerMessage.ObjectGetResponse)]
 	[MemoryPackable]
-	public partial class ObjectGetResponse: MessageObject, IResponse
+	public partial class ObjectGetResponse: MessageObject, IActorResponse
 	{
 		public static ObjectGetResponse Create(bool isFromPool = true) 
 		{ 
@@ -527,7 +527,7 @@ namespace ET
 		public int Type { get; set; }
 
 		[MemoryPackOrder(4)]
-		public ActorId ActorId { get; set; }
+		public long InstanceId { get; set; }
 
 		public override void Dispose() 
 		{
@@ -536,7 +536,7 @@ namespace ET
 			this.Error = default;
 			this.Message = default;
 			this.Type = default;
-			this.ActorId = default;
+			this.InstanceId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -546,7 +546,7 @@ namespace ET
 	[ResponseType(nameof(G2R_GetLoginKey))]
 	[Message(InnerMessage.R2G_GetLoginKey)]
 	[MemoryPackable]
-	public partial class R2G_GetLoginKey: MessageObject, IRequest
+	public partial class R2G_GetLoginKey: MessageObject, IActorRequest
 	{
 		public static R2G_GetLoginKey Create(bool isFromPool = true) 
 		{ 
@@ -557,13 +557,13 @@ namespace ET
 		public int RpcId { get; set; }
 
 		[MemoryPackOrder(1)]
-		public string Account { get; set; }
+		public long PlayerId { get; set; }
 
 		public override void Dispose() 
 		{
 			if (!this.IsFromPool) return;
 			this.RpcId = default;
-			this.Account = default;
+			this.PlayerId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -572,7 +572,7 @@ namespace ET
 
 	[Message(InnerMessage.G2R_GetLoginKey)]
 	[MemoryPackable]
-	public partial class G2R_GetLoginKey: MessageObject, IResponse
+	public partial class G2R_GetLoginKey: MessageObject, IActorResponse
 	{
 		public static G2R_GetLoginKey Create(bool isFromPool = true) 
 		{ 
@@ -608,9 +608,10 @@ namespace ET
 
 	}
 
+	[ResponseType(nameof(M2G_SessionDisconnect))]
 	[Message(InnerMessage.G2M_SessionDisconnect)]
 	[MemoryPackable]
-	public partial class G2M_SessionDisconnect: MessageObject, ILocationMessage
+	public partial class G2M_SessionDisconnect: MessageObject, IActorRequest
 	{
 		public static G2M_SessionDisconnect Create(bool isFromPool = true) 
 		{ 
@@ -620,10 +621,44 @@ namespace ET
 		[MemoryPackOrder(0)]
 		public int RpcId { get; set; }
 
+		[MemoryPackOrder(1)]
+		public long unitId { get; set; }
+
 		public override void Dispose() 
 		{
 			if (!this.IsFromPool) return;
 			this.RpcId = default;
+			this.unitId = default;
+			
+			ObjectPool.Instance.Recycle(this); 
+		}
+
+	}
+
+	[Message(InnerMessage.M2G_SessionDisconnect)]
+	[MemoryPackable]
+	public partial class M2G_SessionDisconnect: MessageObject, IActorResponse
+	{
+		public static M2G_SessionDisconnect Create(bool isFromPool = true) 
+		{ 
+			return ObjectPool.Instance.Fetch(typeof(M2G_SessionDisconnect), isFromPool) as M2G_SessionDisconnect; 
+		}
+
+		[MemoryPackOrder(0)]
+		public int RpcId { get; set; }
+
+		[MemoryPackOrder(1)]
+		public int Error { get; set; }
+
+		[MemoryPackOrder(2)]
+		public string Message { get; set; }
+
+		public override void Dispose() 
+		{
+			if (!this.IsFromPool) return;
+			this.RpcId = default;
+			this.Error = default;
+			this.Message = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -632,7 +667,7 @@ namespace ET
 
 	[Message(InnerMessage.ObjectQueryResponse)]
 	[MemoryPackable]
-	public partial class ObjectQueryResponse: MessageObject, IResponse
+	public partial class ObjectQueryResponse: MessageObject, IActorResponse
 	{
 		public static ObjectQueryResponse Create(bool isFromPool = true) 
 		{ 
@@ -667,7 +702,7 @@ namespace ET
 	[ResponseType(nameof(M2M_UnitTransferResponse))]
 	[Message(InnerMessage.M2M_UnitTransferRequest)]
 	[MemoryPackable]
-	public partial class M2M_UnitTransferRequest: MessageObject, IRequest
+	public partial class M2M_UnitTransferRequest: MessageObject, IActorRequest
 	{
 		public static M2M_UnitTransferRequest Create(bool isFromPool = true) 
 		{ 
@@ -678,7 +713,7 @@ namespace ET
 		public int RpcId { get; set; }
 
 		[MemoryPackOrder(1)]
-		public ActorId OldActorId { get; set; }
+		public long OldInstanceId { get; set; }
 
 		[MemoryPackOrder(2)]
 		public byte[] Unit { get; set; }
@@ -686,13 +721,17 @@ namespace ET
 		[MemoryPackOrder(3)]
 		public List<byte[]> Entitys { get; set; } = new();
 
+		[MemoryPackOrder(4)]
+		public int stageId { get; set; }
+
 		public override void Dispose() 
 		{
 			if (!this.IsFromPool) return;
 			this.RpcId = default;
-			this.OldActorId = default;
+			this.OldInstanceId = default;
 			this.Unit = default;
 			this.Entitys.Clear();
+			this.stageId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -701,7 +740,7 @@ namespace ET
 
 	[Message(InnerMessage.M2M_UnitTransferResponse)]
 	[MemoryPackable]
-	public partial class M2M_UnitTransferResponse: MessageObject, IResponse
+	public partial class M2M_UnitTransferResponse: MessageObject, IActorResponse
 	{
 		public static M2M_UnitTransferResponse Create(bool isFromPool = true) 
 		{ 
@@ -723,6 +762,56 @@ namespace ET
 			this.RpcId = default;
 			this.Error = default;
 			this.Message = default;
+			
+			ObjectPool.Instance.Recycle(this); 
+		}
+
+	}
+
+//�����������״̬
+	[Message(InnerMessage.G2R_PlayerOnline)]
+	[MemoryPackable]
+	public partial class G2R_PlayerOnline: MessageObject, IActorMessage
+	{
+		public static G2R_PlayerOnline Create(bool isFromPool = true) 
+		{ 
+			return ObjectPool.Instance.Fetch(typeof(G2R_PlayerOnline), isFromPool) as G2R_PlayerOnline; 
+		}
+
+		[MemoryPackOrder(0)]
+		public long PlayerInstanceId { get; set; }
+
+		[MemoryPackOrder(1)]
+		public long PlayerId { get; set; }
+
+		public override void Dispose() 
+		{
+			if (!this.IsFromPool) return;
+			this.PlayerInstanceId = default;
+			this.PlayerId = default;
+			
+			ObjectPool.Instance.Recycle(this); 
+		}
+
+	}
+
+//֪ͨPlayer, ��ǰ���뿪Map
+	[Message(InnerMessage.M2Player_ExitMap)]
+	[MemoryPackable]
+	public partial class M2Player_ExitMap: MessageObject, IActorMessage
+	{
+		public static M2Player_ExitMap Create(bool isFromPool = true) 
+		{ 
+			return ObjectPool.Instance.Fetch(typeof(M2Player_ExitMap), isFromPool) as M2Player_ExitMap; 
+		}
+
+		[MemoryPackOrder(0)]
+		public Unity.Mathematics.float3 CurPos { get; set; }
+
+		public override void Dispose() 
+		{
+			if (!this.IsFromPool) return;
+			this.CurPos = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -751,8 +840,11 @@ namespace ET
 		 public const ushort R2G_GetLoginKey = 20019;
 		 public const ushort G2R_GetLoginKey = 20020;
 		 public const ushort G2M_SessionDisconnect = 20021;
-		 public const ushort ObjectQueryResponse = 20022;
-		 public const ushort M2M_UnitTransferRequest = 20023;
-		 public const ushort M2M_UnitTransferResponse = 20024;
+		 public const ushort M2G_SessionDisconnect = 20022;
+		 public const ushort ObjectQueryResponse = 20023;
+		 public const ushort M2M_UnitTransferRequest = 20024;
+		 public const ushort M2M_UnitTransferResponse = 20025;
+		 public const ushort G2R_PlayerOnline = 20026;
+		 public const ushort M2Player_ExitMap = 20027;
 	}
 }

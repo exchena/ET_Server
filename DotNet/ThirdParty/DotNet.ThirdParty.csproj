@@ -45,6 +45,10 @@
         <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\NativeCollection\**\*.cs">
             <Link>NativeCollection/%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
+		
+		<Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LubanLib\**\*.cs">
+        <Link>LubanLib/%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Compile>
 
         <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\DotRecast\**\*.cs">
             <Link>DotRecast/%(RecursiveDir)%(FileName)%(Extension)</Link>

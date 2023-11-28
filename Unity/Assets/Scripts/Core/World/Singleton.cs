@@ -1,8 +1,17 @@
-﻿namespace ET
+﻿using System;
+
+namespace ET
 {
     public interface ISingletonReverseDispose
     {
         
+    }
+    
+    public interface ISingleton: IDisposable
+    {
+        void Register();
+        void Destroy();
+        bool IsDisposed();
     }
     
     public abstract class ASingleton: DisposeObject
