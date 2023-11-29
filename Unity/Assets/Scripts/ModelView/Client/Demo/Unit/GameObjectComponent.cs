@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ET.Client
 {
-    [ComponentOf]
+    [ComponentOf(typeof(Unit))]
     public class GameObjectComponent: Entity, IAwake, IAwake<string>, IDestroy
     {
         private GameObject gameObject;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using FairyGUI;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -61,6 +62,8 @@ namespace ET.Client
                         onExternalLoadFailed();
                 }
             }
+
+            await Task.CompletedTask;
         }
 
         override protected void LoadExternal()

@@ -230,7 +230,7 @@ namespace ET
 		public long Key { get; set; }
 
 		[MemoryPackOrder(3)]
-		public long InstanceId { get; set; }
+		public ActorId ActorId { get; set; }
 
 		public override void Dispose() 
 		{
@@ -238,7 +238,7 @@ namespace ET
 			this.RpcId = default;
 			this.Type = default;
 			this.Key = default;
-			this.InstanceId = default;
+			this.ActorId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -295,7 +295,7 @@ namespace ET
 		public long Key { get; set; }
 
 		[MemoryPackOrder(3)]
-		public long InstanceId { get; set; }
+		public ActorId ActorId { get; set; }
 
 		[MemoryPackOrder(4)]
 		public int Time { get; set; }
@@ -306,7 +306,7 @@ namespace ET
 			this.RpcId = default;
 			this.Type = default;
 			this.Key = default;
-			this.InstanceId = default;
+			this.ActorId = default;
 			this.Time = default;
 			
 			ObjectPool.Instance.Recycle(this); 
@@ -364,10 +364,10 @@ namespace ET
 		public long Key { get; set; }
 
 		[MemoryPackOrder(3)]
-		public long OldInstanceId { get; set; }
+		public ActorId OldActorId { get; set; }
 
 		[MemoryPackOrder(4)]
-		public long InstanceId { get; set; }
+		public ActorId NewActorId { get; set; }
 
 		public override void Dispose() 
 		{
@@ -375,8 +375,8 @@ namespace ET
 			this.RpcId = default;
 			this.Type = default;
 			this.Key = default;
-			this.OldInstanceId = default;
-			this.InstanceId = default;
+			this.OldActorId = default;
+			this.NewActorId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -527,7 +527,7 @@ namespace ET
 		public int Type { get; set; }
 
 		[MemoryPackOrder(4)]
-		public long InstanceId { get; set; }
+		public ActorId ActorId { get; set; }
 
 		public override void Dispose() 
 		{
@@ -536,7 +536,7 @@ namespace ET
 			this.Error = default;
 			this.Message = default;
 			this.Type = default;
-			this.InstanceId = default;
+			this.ActorId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -557,13 +557,13 @@ namespace ET
 		public int RpcId { get; set; }
 
 		[MemoryPackOrder(1)]
-		public long PlayerId { get; set; }
+		public string Account { get; set; }
 
 		public override void Dispose() 
 		{
 			if (!this.IsFromPool) return;
 			this.RpcId = default;
-			this.PlayerId = default;
+			this.Account = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}
@@ -611,7 +611,7 @@ namespace ET
 	[ResponseType(nameof(M2G_SessionDisconnect))]
 	[Message(InnerMessage.G2M_SessionDisconnect)]
 	[MemoryPackable]
-	public partial class G2M_SessionDisconnect: MessageObject, IRequest
+	public partial class G2M_SessionDisconnect: MessageObject, ILocationMessage
 	{
 		public static G2M_SessionDisconnect Create(bool isFromPool = true) 
 		{ 
@@ -713,7 +713,7 @@ namespace ET
 		public int RpcId { get; set; }
 
 		[MemoryPackOrder(1)]
-		public long OldInstanceId { get; set; }
+		public ActorId OldActorId { get; set; }
 
 		[MemoryPackOrder(2)]
 		public byte[] Unit { get; set; }
@@ -728,7 +728,7 @@ namespace ET
 		{
 			if (!this.IsFromPool) return;
 			this.RpcId = default;
-			this.OldInstanceId = default;
+			this.OldActorId = default;
 			this.Unit = default;
 			this.Entitys.Clear();
 			this.stageId = default;
