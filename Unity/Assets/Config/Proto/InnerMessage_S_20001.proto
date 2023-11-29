@@ -60,7 +60,7 @@ message ObjectAddRequest // IRequest
 	int32 RpcId = 1;
 	int32 Type = 2;
 	int64 Key = 3;
-	int64 InstanceId = 4;
+	ActorId ActorId = 4;
 }
 
 message ObjectAddResponse // IResponse
@@ -76,7 +76,7 @@ message ObjectLockRequest // IRequest
 	int32 RpcId = 1;
 	int32 Type = 2;
 	int64 Key = 3;
-	int64 InstanceId = 4;
+	ActorId ActorId = 4;
 	int32 Time = 5;
 }
 message ObjectLockResponse // IResponse
@@ -92,8 +92,8 @@ message ObjectUnLockRequest // IRequest
 	int32 RpcId = 1;
 	int32 Type = 2;
 	int64 Key = 3;
-	int64 OldInstanceId = 4;
-	int64 InstanceId = 5;
+	ActorId OldActorId = 4;
+	ActorId NewActorId = 5;
 }
 message ObjectUnLockResponse // IResponse
 {
@@ -129,14 +129,14 @@ message ObjectGetResponse // IResponse
 	int32 Error = 2;
 	string Message = 3;
 	int32 Type = 4;
-	int64 InstanceId = 5;
+	ActorId ActorId = 5;
 }
 
 //ResponseType G2R_GetLoginKey
 message R2G_GetLoginKey // IRequest
 {
 	int32 RpcId = 1;
-	int64 PlayerId = 2;
+	string Account = 2;
 }
 
 message G2R_GetLoginKey // IResponse
@@ -149,7 +149,7 @@ message G2R_GetLoginKey // IResponse
 }
 
 //ResponseType M2G_SessionDisconnect
-message G2M_SessionDisconnect // IRequest
+message G2M_SessionDisconnect // ILocationMessage
 
 {
 	int32 RpcId = 1;
