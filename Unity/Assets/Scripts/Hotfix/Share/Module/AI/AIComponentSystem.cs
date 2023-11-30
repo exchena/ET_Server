@@ -48,13 +48,15 @@ namespace ET
                 return;
             }
 
-            var oneAI = AIConfigCategory.Instance.AIConfigs[self.AIConfigId];
-
+            var oneAI = AIConfigCategory.Instance.GetAll();
             foreach (AIConfig aiConfig in oneAI.Values)
             {
-
+                if (aiConfig.AIConfigId != self.AIConfigId)
+                {
+                    continue;
+                }
+                
                 AAIHandler aaiHandler = AIDispatcherComponent.Instance.Get(aiConfig.Name);
-
                 if (aaiHandler == null)
                 {
                     Log.Error($"not found aihandler: {aiConfig.Name}");

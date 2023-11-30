@@ -17,7 +17,7 @@ namespace ET
             {
                 if (ipEndPoint == null)
                 {
-                    this.ipEndPoint = NetworkHelper.ToIPEndPoint(this.InnerIP, this.Port);
+                    this.ipEndPoint = NetworkHelper.ToIPEndPoint(this.InnerIP, this.InnerPort);
                 }
 
                 return this.ipEndPoint;
@@ -26,8 +26,6 @@ namespace ET
 
         public StartMachineConfig StartMachineConfig => StartMachineConfigCategory.Instance.Get(this.MachineId);
 
-        public override void EndInit()
-        {
-        }
+        
     }
 }

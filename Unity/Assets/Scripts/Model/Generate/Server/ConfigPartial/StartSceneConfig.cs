@@ -34,7 +34,7 @@ namespace ET
             return this.ClientScenesByName[zone][name];
         }
 
-        public override void EndInit()
+        partial void PostInit()
         {
             foreach (StartSceneConfig startSceneConfig in this.GetAll().Values)
             {
@@ -74,7 +74,7 @@ namespace ET
         }
     }
     
-    public partial class StartSceneConfig: ISupportInitialize
+    public partial class StartSceneConfig
     {
         public ActorId ActorId;
         
@@ -105,7 +105,7 @@ namespace ET
             {
                 if (this.innerIPPort == null)
                 {
-                    this.innerIPPort = NetworkHelper.ToIPEndPoint($"{this.StartProcessConfig.InnerIP}:{this.Port}");
+                    this.innerIPPort = NetworkHelper.ToIPEndPoint($"{this.StartProcessConfig.InnerIP}:{this.innerIPPort}");
                 }
 
                 return this.innerIPPort;
@@ -121,14 +121,14 @@ namespace ET
             {
                 if (this.outerIPPort == null)
                 {
-                    this.outerIPPort = NetworkHelper.ToIPEndPoint($"{this.StartProcessConfig.OuterIP}:{this.Port}");
+                    this.outerIPPort = NetworkHelper.ToIPEndPoint($"{this.StartProcessConfig.OuterIP}:{this.outerIPPort}");
                 }
 
                 return this.outerIPPort;
             }
         }
 
-        public override void EndInit()
+        partial void PostInit()
         {
             this.ActorId = new ActorId(this.Process, this.Id, 1);
             this.Type = EnumHelper.FromString<SceneType>(this.SceneType);

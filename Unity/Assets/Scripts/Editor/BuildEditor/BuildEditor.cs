@@ -167,14 +167,14 @@ namespace ET
             {
                 ToolsEditor.ExcelExporter();
                 
-                const string clientProtoDir = "../Unity/Assets/Bundles/Config";
-                if (Directory.Exists(clientProtoDir))
-                {
-                    Directory.Delete(clientProtoDir, true);
-                }
-                FileHelper.CopyDirectory("../Config/Excel/c", clientProtoDir);
-
-                AssetDatabase.Refresh();
+                // const string clientProtoDir = "../Unity/Assets/Bundles/Config";
+                // if (Directory.Exists(clientProtoDir))
+                // {
+                //     Directory.Delete(clientProtoDir, true);
+                // }
+                // FileHelper.CopyDirectory("../Config/Excel/c", clientProtoDir);
+                //
+                // AssetDatabase.Refresh();
                 return;
             }
 

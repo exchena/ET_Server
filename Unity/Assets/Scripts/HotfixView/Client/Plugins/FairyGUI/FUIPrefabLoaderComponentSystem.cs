@@ -22,7 +22,7 @@ namespace ET.Client
         {
             graph.visible = false;
             self.AssetLocationName = locationName;
-            var objComponent = self.AddComponent<GameObjectComponent>();
+            var objComponent = self.AddComponent<UIGameObjectComponent>();
 
             await objComponent.LoadPrefabAsync(locationName);
             self.ShowPrefab(graph, objComponent.GameObject);
@@ -51,7 +51,7 @@ namespace ET.Client
 
         public static void SetPosAndRot(this FUIPrefabLoaderComponent self, Vector3 pos, Quaternion rot, Vector3 scale)
         {
-            Transform trans = self.GetComponent<GameObjectComponent>().GameObject.transform;
+            Transform trans = self.GetComponent<UIGameObjectComponent>().GameObject.transform;
 
             trans.localPosition = pos;
             trans.localScale = scale;
@@ -62,7 +62,7 @@ namespace ET.Client
 
         public static void SetRot(this FUIPrefabLoaderComponent self, Quaternion rot)
         {
-            Transform trans = self.GetComponent<GameObjectComponent>().GameObject.transform;
+            Transform trans = self.GetComponent<UIGameObjectComponent>().GameObject.transform;
 
             trans.localRotation = rot;
             self.Refresh();
@@ -70,7 +70,7 @@ namespace ET.Client
 
         public static void AddRot(this FUIPrefabLoaderComponent self, Quaternion rot)
         {
-            Transform trans = self.GetComponent<GameObjectComponent>().GameObject.transform;
+            Transform trans = self.GetComponent<UIGameObjectComponent>().GameObject.transform;
 
             trans.localRotation = new Quaternion(trans.localRotation.x + rot.x, trans.localRotation.y + rot.y, trans.localRotation.w + rot.w,
                 trans.localRotation.z + rot.z);
